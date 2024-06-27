@@ -1,29 +1,29 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-export default function Home() {
+export default function Home() { 
     const [valor, setValor] = useState(0)
     const [nombre, setNombre] = useState("")
     const [encendido, setEncendido] = useState(true)
-
     console.log(valor);
 
    const sumar =  () =>  {
-        setValor(valor + 1 );
-        actualizarValor();
+    const nuevoValor = valor + 1 
+        setValor(nuevoValor );
+        actualizarValor(nuevoValor);
     };
 
     const restar =  () =>  {
-        setValor(valor - 1 );
-        actualizarValor();
+        const nuevoValor = valor - 1 
+        setValor(nuevoValor);
+        actualizarValor(nuevoValor);
     };
 
-    const actualizarValor = () => {
-        console.log(valor,"hola");
-        if (valor === 5){
+    const actualizarValor = (nuevoValor) => {
+        if (nuevoValor === 5){
             setNombre("juanjo")
         }
-        else if (valor === 10){
+        else if (nuevoValor === 10){
            setNombre("stiven")
         }
         else{
